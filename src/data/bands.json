@@ -1,0 +1,38 @@
+[
+    {
+        "id": "vuelvezinc",
+        "name": "Vuelve Zinc",
+        "type": "Band",
+        "station": "Verneda",
+        "address": "Verneda",
+        "Genre": [
+            "Indie",
+            "Rock",
+            "Math"
+        ]
+    },
+    {
+        "id": "unfollowers",
+        "name": "Unfollowers",
+        "type": "Band",
+        "station": "Verneda",
+        "address": "Verneda",
+        "Genre": [
+            "Punk",
+            "Post-Punk",
+            "Synthgazing",
+            "Indie"
+        ]
+    },
+    {
+        "id": "mayersanchez",
+        "name": "Mayer-Sánchez",
+        "type": "Band",
+        "station": "Espanya",
+        "address": "Av.Paral·lel",
+        "Genre": [
+            "Singer-Songwriter",
+            "Indie"
+        ]
+    }
+]

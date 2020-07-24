@@ -1,0 +1,66 @@
+
+[
+    {
+        "id": "0",
+        "name": "Freedonia",
+        "type": "Venue",
+        "station": "Paral·lel",
+        "address": "Carrer de la Lleialtat, 6, 08001 Barcelona",
+        "city": "Barcelona",
+        "position":[41.3732203,2.1577016],
+        "className": "rock",
+        "genre": [
+            "Punk",
+            "Indie",
+            "Rock",
+            "Electronic"
+        ]
+    },
+    {
+        "id": "1",
+        "name": "Meteoro",
+        "type": "Venue",
+        "station": "Paral·lel",
+        "address": "Passeig de Montjuïc, 72, 08004 Barcelona",
+        "city": "Barcelona",
+        "position": [41.371829, 2.167423],
+        "className": "rock",
+        "genre": [
+            "Punk",
+            "Post-Punk",
+            "Indie",
+            "Rock"
+        ]
+    },
+    {
+        "id": "2",
+        "name": "Heliogàbal",
+        "type": "Venue",
+        "station": "Joanic <L3>",
+        "address": "Carrer de Ramón y Cajal, 80, 08012 Barcelona",
+        "city": "Barcelona",
+        "position": [41.403543,2.1581153],
+        "className": "rock",
+        "genre": [
+            "Punk",
+            "Post-Punk",
+            "Indie",
+            "Rock"
+        ]
+    },
+    {
+        "id": "3",
+        "name": "Hangar",
+        "type": "Venue",
+        "station": "Poblenou <L3>",
+        "address": "Carrer Emilia Coranty, 16, 08018 Barcelona",
+        "city": "Barcelona",
+        "position": [41.408154, 2.200094],
+        "className": "electronic",
+        "genre": [
+            "DIY",
+            "Electronic",
+            "Punk"
+        ]
+    }
+]

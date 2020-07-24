@@ -1,0 +1,20 @@
+[
+    {
+        "idNumber": 0,
+        "id": "Barcelona",
+        "coordinates": [41.386991, 2.169987],
+        "current": false
+    },
+    {
+        "idNumber": 1,
+        "id": "Lisbon",
+        "coordinates": [38.714973, -9.138424],
+        "current": false
+    },
+    {
+        "idNumber": 2,
+        "id": "London",
+        "coordinates": [51.507129, -0.127656],
+        "current": false
+    }
+]

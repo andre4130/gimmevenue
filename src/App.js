@@ -32,7 +32,7 @@ class App extends React.Component {
       <div className="App">
         <h1>{this.state.selectedCity}</h1>
         <BarcelonaMapGl
-                  mapboxApiAccessToken={"pk.eyJ1IjoiYW5kcmU0MTMwIiwiYSI6ImNrY25qMjVhZDBicnUycmxobTZwdDRlYzMifQ.4OTMiqEr3gZDmRZJY-ByHA"} 
+                  mapboxApiAccessToken={} 
                   selectedCity={this.state.selectedCity} 
                   latitude={this.state.latitude} 
                   longitude={this.state.longitude}/>

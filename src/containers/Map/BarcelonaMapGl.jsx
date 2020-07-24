@@ -60,7 +60,7 @@ function BarcelonaMapGl ({selectedCity, latitude, longitude}) {
     <div>
         <ReactMapGL
                 {...viewPort}
-                mapboxApiAccessToken={"pk.eyJ1IjoiYW5kcmU0MTMwIiwiYSI6ImNrY25qMjVhZDBicnUycmxobTZwdDRlYzMifQ.4OTMiqEr3gZDmRZJY-ByHA"}
+                mapboxApiAccessToken={}
                 mapStyle="mapbox://styles/andre4130/ckcnjsgto2nrb1inpf706l90s"
                 onViewportChange={viewport => {
                     setViewPort(viewport);

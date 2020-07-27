@@ -90,3 +90,10 @@
   /* border-radius: 50%; */
   cursor: pointer;
 }
+
+footer {
+  height: 10vh;
+  width: 100vw;
+  background-color: white;
+
+}

@@ -14,7 +14,8 @@
     "react-leaflet": "^2.7.0",
     "react-map-gl": "^5.2.7",
     "react-scripts": "3.4.1",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "use-supercluster": "^0.2.8"
   },
   "scripts": {
     "start": "react-scripts start",

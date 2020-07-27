@@ -14,7 +14,8 @@
             "Indie",
             "Rock",
             "Electronic"
-        ]
+        ],
+        "cluster": false
     },
     {
         "id": "1",
@@ -30,7 +31,8 @@
             "Post-Punk",
             "Indie",
             "Rock"
-        ]
+        ],
+        "cluster": false
     },
     {
         "id": "2",
@@ -46,7 +48,8 @@
             "Post-Punk",
             "Indie",
             "Rock"
-        ]
+        ],
+        "cluster": false
     },
     {
         "id": "3",
@@ -61,6 +64,7 @@
             "DIY",
             "Electronic",
             "Punk"
-        ]
+        ],
+        "cluster": false
     }
 ]

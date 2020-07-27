@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from 'react'
-import ReactMapGL, {Marker, Popup} from 'react-map-gl'
+import React, {useState, useEffect, useRef} from 'react'
+import ReactMapGL, {Marker, Popup, FlyToInterpolator} from 'react-map-gl'
+import useSuperCluster from "use-supercluster";
 //components
 import CitySelection from '../../components/CitySelection/CitySelection'
 import venues from '../../data/venues.json'
@@ -9,16 +10,17 @@ function BarcelonaMapGl ({selectedCity, latitude, longitude}) {
     
     console.log('in BarcelonaMapGl', selectedCity, latitude, longitude)
     const [viewPort, setViewPort] = useState ({
-        latitude: 45,
-        longitude: 0,
+        latitude: 41.386991, 
+        longitude: 2.169987,
         zoom: 13,
         width: "100vw",
-        height: "100vh"
+        height: "90vh"
     })
     
 
     //using the escape key to close the popup
-    const [selectedVenue, setSelectedVenue] = useState(null)
+    const [selectedVenue, setSelectedVenue] = useState(null);
+
     useEffect(() => {
         const listener = e => {
             if(e.key ==="Escape") {
@@ -30,12 +32,44 @@ function BarcelonaMapGl ({selectedCity, latitude, longitude}) {
         return () => {
             window.removeEventListener("keydown", listener)
         }
-    }, [])
+    }, []);
+
+
+        const mapRef = useRef();
+
+    //Generating a Supercluster of venues
+
+    //Load and prepare the data
+    const points = venues.map(venue => ({
+            id: venue.id,
+            city: venue.city,
+            position:[venue.position[0],venue.position[1]],
+            className: venue.className,
+            cluster: false,
+            type: "Point",
+    }));
+
+    //get the bounds 
+
+    const bounds =  mapRef.current ? mapRef.current.getMap().getBounds().toArray().flat() : null;
+
+    //generating the cluster
+
+    const {clusters} = useSuperCluster({
+        points, 
+        zoom: viewPort.zoom, 
+        bounds,
+        options: {radius: 75, maxZoom: 20}
+    })
 
 
     //markers code Leigh
     const venuesMarker = venues.map(venue => 
-    <Marker key={venue.id} latitude={venue.position[0]} longitude={venue.position[1]}>
+    <Marker 
+        key={venue.id} 
+        latitude={venue.position[0]} 
+        longitude={venue.position[1]}
+    >
         <div style={{color: "white"}}>
             {venue.name}
             <br/>
@@ -43,7 +77,8 @@ function BarcelonaMapGl ({selectedCity, latitude, longitude}) {
                     onClick={(e) => {
                         e.preventDefault()
                         setSelectedVenue(venue)
-                    }}>
+                    }}
+            >
             </div>
         </div>
     </Marker>
@@ -65,8 +100,10 @@ function BarcelonaMapGl ({selectedCity, latitude, longitude}) {
                 onViewportChange={viewport => {
                     setViewPort(viewport);
                     console.log('in mapGl', viewport)
+                    console.log('clusters:', clusters)
                 }}
                 onClick={() => setSelectedVenue(null)}
+                ref={mapRef}
                 >
         {venuesMarker}
         {selectedVenue ? (

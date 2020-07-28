@@ -101,6 +101,17 @@
   color: #dfe0e2
 }
 
+/* Hide and Show animations  */
+
+.show {
+  color: #DFF2D8;
+  animation-duration: 1s;
+}
+
+.hide {
+  display:none;
+  animation-duration: 1s;
+}
 
 /* components CSS */
 .checkcity {

@@ -1,11 +1,13 @@
-import React, {useState, useEffect, fetcher, useRef, useSwr} from 'react'
-import ReactMapGL, {Marker, Popup, FlyToInterpolator} from 'react-map-gl'
+import React, {useState, useEffect, useRef} from 'react'
+import ReactMapGL, {Marker, Popup} from 'react-map-gl'
 import useSupercluster from "use-supercluster";
 //components
 import CitySelection from '../../components/CitySelection/CitySelection'
 import venues from '../../data/venues.json'
+import FilterBox from '../../components/FilterBox/FilterBox';
+import CheckCity from '../../components/CitySelection/CheckCity';
 
-function BarcelonaMapGl ({selectedCity, latitude, longitude}) {
+function BarcelonaMapGl ({selectedCity, latitude, longitude, handleSelectCity}) {
     
     console.log('in BarcelonaMapGl', selectedCity, latitude, longitude)
     const [viewPort, setViewPort] = useState ({
@@ -84,13 +86,7 @@ function BarcelonaMapGl ({selectedCity, latitude, longitude}) {
     </Marker>
     )
 
-    //checkcity function
-
-    const seeCity = (selectedCity, lat, long) => {
-        setViewPort({...viewPort, latitude: lat, longitude: long})
-        console.log(selectedCity, lat, long)
-    }
-
+    
     return (
     <div>
         <ReactMapGL
@@ -115,7 +111,19 @@ function BarcelonaMapGl ({selectedCity, latitude, longitude}) {
                 <p>{selectedVenue.address}</p>
             </Popup>
         ) : null}
-        <button onClick={() => seeCity(selectedCity, latitude, longitude)}>check city</button>
+        <FilterBox 
+            selectedCity={selectedCity} 
+            latitude={latitude} 
+            longitude={longitude}
+        />
+        <CheckCity
+            selectedCity={selectedCity}
+            latitude={latitude}
+            longitude={longitude}
+            setViewPort={setViewPort}
+            viewPort={viewPort}
+            handleSelectCity={handleSelectCity}
+        />
         </ReactMapGL>
     </div>
 

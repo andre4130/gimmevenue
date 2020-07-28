@@ -14,7 +14,11 @@ import FilterBox from './components/FilterBox/FilterBox';
 class App extends React.Component {
   constructor(props){
     super(props);
-    this.state = {selectedCity: 'Barcelona'};
+    this.state = {
+      selectedCity: 'Barcelona',
+      latitude: 41.386991,
+      longitude: 2.169987,
+    };
     this.year = new Date().getFullYear()
   }
 
@@ -31,13 +35,14 @@ class App extends React.Component {
   render(){
     return (   
       <div className="App">
-        <h1>{this.state.selectedCity}</h1>
         <BarcelonaMapGl
                   mapboxApiAccessToken={"pk.eyJ1IjoiYW5kcmU0MTMwIiwiYSI6ImNrY25qMjVhZDBicnUycmxobTZwdDRlYzMifQ.4OTMiqEr3gZDmRZJY-ByHA"} 
                   selectedCity={this.state.selectedCity} 
                   latitude={this.state.latitude} 
-                  longitude={this.state.longitude}/>
-        <FilterBox selectedCity={this.state.selectedCity}></FilterBox>
+                  longitude={this.state.longitude}
+                  handleSelectCity={this.handleSelectCity}
+        >
+        </BarcelonaMapGl>
         <Navbar handleSelectCity={this.handleSelectCity}></Navbar>
         <Footer year={this.year}/>
       </div>

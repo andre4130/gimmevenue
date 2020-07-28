@@ -5,8 +5,6 @@ import Content from './Content';
 import Drawer from '../../components/Drawer';
 import FloatingActionButton from '../../components/FloatingActionButton';
 import Icon from '../../components/Icon';
-import CitySelection from '../CitySelection/CitySelection'
-import cities from '../../data/cities.json'
 
 class Navbar extends Component {
   constructor(props) {
@@ -42,7 +40,7 @@ class Navbar extends Component {
           </Content>
           <Item>
             <Icon name="arrowBack" fill="#104986" />
-            <CitySelection handleSelectCity={this.props.handleSelectCity}/>
+            <p>insert something here</p>
           </Item>
           <Item
             href="https://honeypotio.github.io/research/pages/london-techmap.html"

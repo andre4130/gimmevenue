@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar"
 import Footer from './components/Footer/Footer'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CitySelection from './components/CitySelection/CitySelection';
+import FilterBox from './components/FilterBox/FilterBox';
 
 
 class App extends React.Component {
@@ -36,6 +37,7 @@ class App extends React.Component {
                   selectedCity={this.state.selectedCity} 
                   latitude={this.state.latitude} 
                   longitude={this.state.longitude}/>
+        <FilterBox selectedCity={this.state.selectedCity}></FilterBox>
         <Navbar handleSelectCity={this.handleSelectCity}></Navbar>
         <Footer year={this.year}/>
       </div>

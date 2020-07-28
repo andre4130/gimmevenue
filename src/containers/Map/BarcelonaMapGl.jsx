@@ -1,10 +1,9 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useState, useEffect, fetcher, useRef, useSwr} from 'react'
 import ReactMapGL, {Marker, Popup, FlyToInterpolator} from 'react-map-gl'
-import useSuperCluster from "use-supercluster";
+import useSupercluster from "use-supercluster";
 //components
 import CitySelection from '../../components/CitySelection/CitySelection'
 import venues from '../../data/venues.json'
-import cities from '../../data/cities.json'
 
 function BarcelonaMapGl ({selectedCity, latitude, longitude}) {
     
@@ -14,10 +13,9 @@ function BarcelonaMapGl ({selectedCity, latitude, longitude}) {
         longitude: 2.169987,
         zoom: 13,
         width: "100vw",
-        height: "90vh"
+        height: "95vh"
     })
     
-
     //using the escape key to close the popup
     const [selectedVenue, setSelectedVenue] = useState(null);
 
@@ -37,17 +35,18 @@ function BarcelonaMapGl ({selectedCity, latitude, longitude}) {
 
         const mapRef = useRef();
 
-    //Generating a Supercluster of venues
+//Generating a Supercluster of venues
+
 
     //Load and prepare the data
     const points = venues.map(venue => ({
+            type: "Feature",
             id: venue.id,
-            city: venue.city,
-            position:[venue.position[0],venue.position[1]],
-            className: venue.className,
-            cluster: false,
-            type: "Point",
+            properties: {cluster: false, venueID: venue.id, category: venue.className},
+            geometry: {type: "Point", coordinates: [venue.position[0], venue.position[1]]},
     }));
+
+    console.log('loading the points function:', points)
 
     //get the bounds 
 
@@ -55,13 +54,14 @@ function BarcelonaMapGl ({selectedCity, latitude, longitude}) {
 
     //generating the cluster
 
-    const {clusters} = useSuperCluster({
+    const { clusters } = useSupercluster({
         points, 
         zoom: viewPort.zoom, 
         bounds,
-        options: {radius: 75, maxZoom: 20}
-    })
-
+        options: {radius: 75, maxZoom: 20, minZoom:0}
+    });
+    
+    console.log('check clusters:', clusters)
 
     //markers code Leigh
     const venuesMarker = venues.map(venue => 

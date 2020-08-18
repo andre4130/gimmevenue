@@ -28,5 +28,10 @@
         "id": "5",
         "genre": "Hip-Hop",
         "checked": true
+    },   
+    {
+        "id": "6",
+        "genre": "DIY",
+        "checked": true
     }
 ]

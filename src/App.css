@@ -105,12 +105,14 @@
 
 .show {
   color: #DFF2D8;
-  animation-duration: 1s;
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
+  
 }
 
 .hide {
-  display:none;
-  animation-duration: 1s;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
 }
 
 /* components CSS */
@@ -138,6 +140,14 @@
   z-index: 2;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.popup{
+text-align: left;  
+}
+
+.popup h2, h3, h4 {
+  text-align: center;
 }
 
 .filterbox ul{

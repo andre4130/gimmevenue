@@ -1,25 +1,7 @@
 import React, { Fragment } from 'react'
 
 
-function FilterBox({ selectedCity, latitude, longitude, onChange, state }) {
-
-    //checked function
-
-    // const [state, setChecked] = useState({
-    //     checkbox: genres
-    // })
-
-    // const handleCheckboxChange = e => {
-    //     setChecked({
-    //         checkbox: state.checkbox.map(genre => {
-    //             return (e.target.value !== genre.genre) ?
-    //                 genre : { ...genre, checked: !genre.checked }
-
-    //         })        
-    //     })
-    // }
-
-    // console.log(state)
+function FilterBox({ selectedCity, latitude, longitude, onChange, onClick, state, select }) {
 
     const _genres = state.checkbox.map(genre =>
         <li key={genre.id} >
@@ -37,6 +19,7 @@ function FilterBox({ selectedCity, latitude, longitude, onChange, state }) {
         </li>
     )
 
+
     return (
         <Fragment>
             <div className="filterbox">
@@ -45,10 +28,17 @@ function FilterBox({ selectedCity, latitude, longitude, onChange, state }) {
                 <p> {`lat ${latitude}, long ${longitude}`}</p>
                 <label>
                     Select Genre:
-            <ul>
+                    <ul>
                         {_genres}
                     </ul>
                 </label>
+                <br/>
+                <button
+                    type="button" 
+                    onClick={onClick}
+                    value="Select All"
+                    name={select.select}
+                >{select.select}</button>
             </div>
         </Fragment>
     )

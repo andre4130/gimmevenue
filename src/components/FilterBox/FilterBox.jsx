@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 
 
-function FilterBox({ selectedCity, latitude, longitude, onChange, onClick, state, select }) {
+function FilterBox({ selectedCity, latitude, longitude, onChange, onClick, state}) {
 
     const _genres = state.checkbox.map(genre =>
         <li key={genre.id} >
@@ -34,11 +34,20 @@ function FilterBox({ selectedCity, latitude, longitude, onChange, onClick, state
                 </label>
                 <br/>
                 <button
+                    className="button"
                     type="button" 
                     onClick={onClick}
                     value="Select All"
-                    name={select.select}
-                >{select.select}</button>
+                    name="selectAll"
+                >Select All</button>
+                <button
+                className="button"
+                type="button"
+                onClick={onClick}
+                value="Clear All"
+                name="clearAll">
+                    Clear All
+                </button>
             </div>
         </Fragment>
     )

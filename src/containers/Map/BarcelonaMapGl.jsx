@@ -29,18 +29,9 @@ function BarcelonaMapGl({ mapboxApiAccessToken, selectedCity, latitude, longitud
         stateVenues: venues
     })
 
-    const [select, setSelect] = useState({
-        select: "Select All"
-    });
-
 
     const handleCheckboxChange = e => {
-        
-        if (state.checkbox.includes(genres.checked === false)) {
-            setSelect({select: "Deselect All"})
-        } else {
-            setSelect({ select: "Select All" })
-        }
+                
 
         setChecked({
             checkbox: state.checkbox.map(genre => {
@@ -49,40 +40,88 @@ function BarcelonaMapGl({ mapboxApiAccessToken, selectedCity, latitude, longitud
             })
         })
 
-
         setVenue({
             stateVenues: stateVenue.stateVenues.map(venue => {
-                var n = venue.genre.includes(e.target.value);
-                var m = true;
-                for (let i = 0; i < venue.genre.length; i++) {
-                    for (let n = 0; n < state.checkbox.length; n++) {
-                        if (venue.genre[i] === state.checkbox[n].genre && state.checkbox[n].checked === true) {
-                            console.log(state.checkbox[n].genre, "is checked in", venue.name);
-                            m = true;
-                        } else {
-                            console.log(state.checkbox[n].genre, "is not checked in", venue.name)
-                            m = false;
-                        }
+                console.log("loop starts")
+                var counter = venue.genre.length;
+                for (let i = 0; i < state.checkbox.length; i++) {
+                    if ((state.checkbox[i].checked) === true && venue.genre.includes(state.checkbox[i].genre)) {
+                        // counter = counter + 1
+                        console.log("current venue:", venue.name, ",statement is true and genre is", state.checkbox[i].genre, state.checkbox[i].checked, "counter is:", counter)
+                    } else if ((state.checkbox[i].checked) === true && !venue.genre.includes(state.checkbox[i].genre)) {
+                        console.log("current venue:", venue.name, ". The genre ", state.checkbox[i].genre, "is checked", state.checkbox[i].checked," but not included in the venue, ", "counter is:", counter)
+                    } else if ((state.checkbox[i].checked) === false && venue.genre.includes(state.checkbox[i].genre)) {
+                        counter = counter -1
+                        console.log("current venue:", venue.name, ",the genre is not checked, exists in the Venue and genre is", state.checkbox[i].genre, state.checkbox[i].checked, "counter is:", counter)
+                    } else {
+                        console.log("current venue:", venue.name, ",the genre is not checked, does not exist in the venue and genre is", state.checkbox[i].genre, state.checkbox[i].checked, "counter is:", counter)
                     }
-                    return (n && m ? { ...venue, isVisible: false } : {...venue, isVisible: true})
                 }
-            }
-            )
+                console.log("end of function", counter)
+                if (counter === 0) {
+                    return {...venue, isVisible: false }                    
+                } else {
+                    return {...venue, isVisible: true}
+                }
+            })
+        })
+
+
+        // setVenue({
+        //     stateVenues: stateVenue.stateVenues.map(venue => {
+        //         var includes = venue.genre.includes(e.target.value)
+        //         for (let i = 0; i < venue.genre.length; i++) {
+        //             console.log("checking ", venue.name, "lenght: ", venue.genre.length)
+        //             for (let n = 0; n < state.checkbox.length; n++) {
+        //                 if (venue.genre[i] === state.checkbox[n].genre && state.checkbox[n].checked === true) {
+        //                     console.log(state.checkbox[n].genre, "exists and it is checked on", venue.name, i)
+        //                     // return {...venue, counter: venue.counter + 1}                   
+        //                 } else if (venue.genre[i] !== state.checkbox[n].genre) {
+        //                     console.log(state.checkbox[n].genre, "does not exist in", venue.name)
+        //                     // return {...venue, counter: venue.counter = 0}
+        //                 } else if(venue.genre[i] === state.checkbox[n].genre && state.checkbox[n].checked === false) {
+        //                     console.log(state.checkbox[n].genre, "exists on",venue.name, "but it is not checked on")
+        //                 }
+        //             }
+        //             console.log("end of the for loop for the checkboxes", venue.counter)
+        //             // return (includes && venue.counter > 0 ? { ...venue, isVisible: true } : {...venue, isVisible: false})
+        //         }
+        //         console.log("end of main for loop")
+        //     }
+        //     )
+        // })
+    }
+
+const handleSelectAll = e => {
+    //select all and clear all buttons
+    if (e.target.value === "Select All") {
+        setChecked({
+            checkbox: state.checkbox.map(genre => {
+                return { ...genre, checked: true}
+            })
+        })
+    } else {
+        setChecked({
+            checkbox: state.checkbox.map(genre => {
+                return { ...genre, checked: false }
+            }) 
+        })
+    }
+    //hiding and showing the locations    
+    if (e.target.value === "Select All"){
+        setVenue({
+            stateVenues: stateVenue.stateVenues.map(venue => {
+                return { ...venue, isVisible: true }
+            })
+        })
+    } else {
+        setVenue({
+            stateVenues: stateVenue.stateVenues.map(venue => {
+                return { ...venue, isVisible: false, counter: 0}
+            })
         })
     }
 
-const handleSelectAll = () => {
-    setChecked({
-        checkbox: state.checkbox.map(genre => {
-            return { ...genre, checked: true }
-        })
-    })
-
-    setVenue({
-        stateVenues: stateVenue.stateVenues.map(venue => {
-            return { ...venue, isVisible: true }
-        })
-    })
 }
 
 //using the escape key to close the popup
@@ -203,7 +242,6 @@ return (
                 onChange={handleCheckboxChange}
                 onClick={handleSelectAll}
                 state={state}
-                select={select}
             />
             <CheckCity
                 selectedCity={selectedCity}

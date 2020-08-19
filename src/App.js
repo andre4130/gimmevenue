@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 //Styles
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,6 +8,8 @@ import './App.css';
 import BarcelonaMapGl from './containers/Map/BarcelonaMapGl';
 import Navbar from "./components/Navbar"
 import Footer from './components/Footer/Footer'
+import Login from './components/Auth/Login'
+import Register from './components/Auth/Register'
 
 //data
 import tokens from "./data/token.json"
@@ -38,11 +41,19 @@ class App extends React.Component {
     console.log('getting token', this.token)
   };
 
-
-
   render() {
     return (
+
       <div className="App">
+        <Router>
+          <Switch>
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
+          </Switch>       
+           <button>
+            <Link to={'/login'}>Login</Link>
+          </button>
+        </Router>
         <BarcelonaMapGl
           mapboxApiAccessToken={this.token}
           selectedCity={this.state.selectedCity}
@@ -50,6 +61,7 @@ class App extends React.Component {
           longitude={this.state.longitude}
           handleSelectCity={this.handleSelectCity}
         >
+
         </BarcelonaMapGl>
         <Navbar handleSelectCity={this.handleSelectCity}></Navbar>
         <Footer year={this.year} />

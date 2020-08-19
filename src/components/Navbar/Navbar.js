@@ -6,6 +6,14 @@ import Drawer from '../../components/Drawer';
 import FloatingActionButton from '../../components/FloatingActionButton';
 import Icon from '../../components/Icon';
 
+//Routing components
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+
+//Components
+
+import Login from '../../components/Auth/Login'
+
 class Navbar extends Component {
   constructor(props) {
     super(props);
@@ -40,7 +48,12 @@ class Navbar extends Component {
           </Content>
           <Item>
             <Icon name="arrowBack" fill="#104986" />
-            <p>insert something here</p>
+            <Router>
+            <Switch>
+            <Route exact path="/login" component={Login} />
+          </Switch>
+                <Link to="/login">Login</Link>
+            </Router>
           </Item>
           <Item
             href="https://honeypotio.github.io/research/pages/london-techmap.html"

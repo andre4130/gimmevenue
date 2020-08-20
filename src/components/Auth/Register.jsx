@@ -91,6 +91,8 @@ const Register = () => {
                     </div>
                 </form>
                 <Link to={'/login'} className="enlace-cuenta">Login</Link>
+                <br/>
+                <Link to={'/'} className="enlace-cuenta">Back to Map</Link>
             </div>
         </div>
     );

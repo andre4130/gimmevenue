@@ -7,12 +7,9 @@ import FloatingActionButton from '../../components/FloatingActionButton';
 import Icon from '../../components/Icon';
 
 //Routing components
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import {Link} from 'react-router-dom';
 
 //Components
-
-import Login from '../../components/Auth/Login'
 
 class Navbar extends Component {
   constructor(props) {
@@ -48,19 +45,11 @@ class Navbar extends Component {
           </Content>
           <Item>
             <Icon name="arrowBack" fill="#104986" />
-            <Router>
-            <Switch>
-            <Route exact path="/login" component={Login} />
-          </Switch>
-                <Link to="/login">Login</Link>
-            </Router>
+                <Link to={"/login"}>Login</Link>
           </Item>
-          <Item
-            href="https://honeypotio.github.io/research/pages/london-techmap.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon name="assessment" fill="#104986" /> Research Report
+          <Item>
+            <Icon name="assessment" fill="#104986" /> 
+            <Link to={"/register"}>Sign In</Link>
           </Item>
           <Item
             href="https://www.honeypot.io"

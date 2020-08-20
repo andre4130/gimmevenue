@@ -64,6 +64,9 @@ const Login = () => {
                     </div>
                 </form>
                 <Link to={'/register'} className="enlace-cuenta">Register</Link>
+                <br/>
+                <Link to={'/'} className="enlace-cuenta">Back to Map</Link>
+
             </div>
         </div>
     );

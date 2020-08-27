@@ -122,6 +122,25 @@
 }
 
 /* components CSS */
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #000000;
+  padding: 2rem;
+}
+
+.nav-principal a {
+  color:  #CCCCCC;
+  text-decoration: none;
+}
+
+.nombre-usuario {
+  color: #CCCCCC;
+  font-size: 2.2rem;
+  margin: 0;
+}
+
 .checkcity {
   display: flex;
   margin: 1rem;
@@ -197,4 +216,16 @@ footer {
   display: flex;
   margin-bottom: 2rem;
   align-items: center;
+}
+
+/*Alerts*/
+
+.alert-ok {
+  background-color: rgb(109,211,109);
+  color: rgb(2,103,2);
+}
+
+.alert-error {
+  background-color: rgb(230,78,78);
+  color: white;
 }

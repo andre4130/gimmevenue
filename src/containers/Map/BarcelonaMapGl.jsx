@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useContext, useEffect, useRef } from 'react'
 import ReactMapGL, { Marker, Popup } from 'react-map-gl'
 import useSupercluster from "use-supercluster";
 
@@ -13,6 +13,7 @@ import CheckCity from '../../components/CitySelection/CheckCity';
 //data 
 import genres from '../../data/genres.json'
 import venues from '../../data/venues.json'
+
 
 function BarcelonaMapGl({ mapboxApiAccessToken, selectedCity, latitude, longitude, handleSelectCity }) {
 
@@ -69,10 +70,9 @@ function BarcelonaMapGl({ mapboxApiAccessToken, selectedCity, latitude, longitud
                 } else {
                     return {...venue, isVisible: true}
                 }
-                // return {...venue, counter: counter}
             })
         })
-    }
+    }; 
 
 const handleSelectAll = e => {
     //select all and clear all buttons

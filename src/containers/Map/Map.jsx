@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../App.css';
 //Components
 import BarcelonaMapGl from '../../containers/Map/BarcelonaMapGl';
-import Navbar from "../../components/Navbar";
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 
@@ -19,13 +18,13 @@ import AuthContext from '../../context/authentication/authContext';
 
 function App({city}) {
 
-  // //setting the state of the App
-  // const authContext = useContext(AuthContext)
-  // const { authUser } = authContext;
+  //setting the state of the App
+  const authContext = useContext(AuthContext)
+  const { authUser } = authContext;
   
-  // useEffect(() => {
-  //   authUser();
-  // });
+  useEffect(() => {
+    authUser();
+  },[]);
   
   const [stateCity, setCityState] = useState({
       selectedCity: 'Barcelona',
@@ -57,9 +56,7 @@ function App({city}) {
           longitude={stateCity.longitude}
           handleSelectCity={handleSelectCity}
         >
-  
         </BarcelonaMapGl>
-        <Navbar handleSelectCity={handleSelectCity}></Navbar>
         <Footer year={year} />
       </div>
     );

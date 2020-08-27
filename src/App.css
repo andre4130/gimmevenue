@@ -37,7 +37,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -121,6 +121,47 @@
   margin: 0.2rem;
 }
 
+.btn {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  border-radius: .5rem;
+  border: none;
+  transition: background-color .3s ease;
+  color:#DFF2D8;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+.btn-primario {
+  background-color: var(--gris2);
+  color: var(--blanco);
+}
+.btn-primario:hover {
+  background: var(--gris3);
+}
+.btn-secundario {
+  background-color: var(--gris1);
+}
+.btn-block {
+  display: block;
+  width: 100%;
+}
+.btn-submit:hover {
+  background-color: var(--gris2);
+}
+.btn-blank {
+  margin: 0;
+  padding: 0;
+  display: inline;
+  background-color: transparent;
+}
+
+.btn-log {
+display: inline-flex;
+}
 /* components CSS */
 
 .app-header {

@@ -5,8 +5,11 @@ import Content from './Content';
 import Drawer from '../../components/Drawer';
 import FloatingActionButton from '../../components/FloatingActionButton';
 import Icon from '../../components/Icon';
-import CitySelection from '../CitySelection/CitySelection'
-import cities from '../../data/cities.json'
+
+//Routing components
+import {Link} from 'react-router-dom';
+
+//Components
 
 class Navbar extends Component {
   constructor(props) {
@@ -42,14 +45,11 @@ class Navbar extends Component {
           </Content>
           <Item>
             <Icon name="arrowBack" fill="#104986" />
-            <CitySelection handleSelectCity={this.props.handleSelectCity}/>
+                <Link to={"/login"}>Login</Link>
           </Item>
-          <Item
-            href="https://honeypotio.github.io/research/pages/london-techmap.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon name="assessment" fill="#104986" /> Research Report
+          <Item>
+            <Icon name="assessment" fill="#104986" /> 
+            <Link to={"/register"}>Sign In</Link>
           </Item>
           <Item
             href="https://www.honeypot.io"

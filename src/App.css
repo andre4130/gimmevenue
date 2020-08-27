@@ -1,3 +1,21 @@
+/* APP Color pallette */
+
+.colors{
+  Black:
+  #000000;
+  Viridian:
+  #488068;
+  PhtaloGreen:
+  #182F25;
+  Nyanza:
+  #DFF2D8;
+  LightGray:
+  #CCCCCC;
+  Cultured:
+  #F2F2F2;
+}
+
+
 .App {
   text-align: center;
 }
@@ -54,17 +72,7 @@
   color: red;
 }
 
-/* .marker-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.marker-btn img {
-  width: 25px;
-  height: 25px;
-} */
-
+/* Icons CSS */
 .rock {
   background-image: url('./assets/svg/guitar.svg');
   background-size: cover;
@@ -76,6 +84,7 @@
   height: 40px;
   /* border-radius: 50%; */
   cursor: pointer;
+  color: #dfe0e2;
 }
 
 .electronic {
@@ -89,4 +98,134 @@
   height: 40px;
   /* border-radius: 50%; */
   cursor: pointer;
+  color: #dfe0e2
+}
+
+/* Hide and Show animations  */
+
+.show {
+  color: #DFF2D8;
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
+  
+}
+
+.hide {
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+/* Buttons CSS */
+
+.button {
+  margin: 0.2rem;
+}
+
+/* components CSS */
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #000000;
+  padding: 2rem;
+}
+
+.nav-principal a {
+  color:  #CCCCCC;
+  text-decoration: none;
+}
+
+.nombre-usuario {
+  color: #CCCCCC;
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+.checkcity {
+  display: flex;
+  margin: 1rem;
+  padding: 1rem;
+  height: 10vh;
+  width: 20vw;
+  background-color: #DFF2D8;
+  z-index: 2;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;  
+  cursor: pointer;
+}
+
+.filterbox {
+  display: block;
+  margin: 1rem;
+  padding: 1rem;
+  height: auto;
+  width: 20vw;
+  background-color: teal;
+  z-index: 2;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.popup{
+text-align: left;  
+}
+
+.popup h2, h3, h4 {
+  text-align: center;
+}
+
+.filterbox ul{
+  list-style: none;
+  text-align: left;
+}
+
+footer {
+  height: 5vh;
+  width: 100vw;
+  background-color: white;
+
+}
+
+/* Login  */
+
+.form-user {
+  background-color: var(--gris2);
+  height: 100vh;
+  min-height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedor-form {
+  padding: 5rem 3rem;
+  max-width: 500px;
+  width: 95%;
+  background-color: #F2F2F2;
+  border-radius: 1rem;
+}
+
+.sombra-dark {
+  -webkit-box-shadow: 0px 6px 11px -8px rgba(0,0,0,0.9);
+  -moz-box-shadow: 0px 6px 11px -8px rgba(0,0,0,0.9);
+  box-shadow: 0px 6px 11px -8px rgba(0,0,0,0.9);
+}
+
+.campo-form {
+  display: flex;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+/*Alerts*/
+
+.alert-ok {
+  background-color: rgb(109,211,109);
+  color: rgb(2,103,2);
+}
+
+.alert-error {
+  background-color: rgb(230,78,78);
+  color: white;
 }

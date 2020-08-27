@@ -1,43 +1,40 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //Styles
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 //Components
-import BarcelonaMapGl from './containers/Map/BarcelonaMapGl';
-import Navbar from "./components/Navbar"
-import Footer from './components/Footer/Footer'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import CitySelection from './components/CitySelection/CitySelection';
+import Login from './components/Auth/Login'
+import Register from './components/Auth/Register'
+import Map from './containers/Map/Map'
+//States
+import AlertState from './context/alert/alertState';
+import AuthState from './context/authentication/authState';
+import tokenAuth from './config/tokenAuth';
 
-
+//checking if a token is available
+const token = localStorage.getItem('token');
+if(token) {
+  tokenAuth(token);
+}
+ 
 class App extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {selectedCity: 'Barcelona'};
-    this.year = new Date().getFullYear()
-  }
 
-
-  handleSelectCity = (city) => {
-    this.setState({
-      selectedCity: city[0].id,
-      latitude: city[0].coordinates[0],
-      longitude: city[0].coordinates[1]
-    })
-    console.log('city in App.js', city)
-  };
-
-  render(){
-    return (   
+  render() {
+    return (
       <div className="App">
-        <h1>{this.state.selectedCity}</h1>
-        <BarcelonaMapGl
-                  mapboxApiAccessToken={} 
-                  selectedCity={this.state.selectedCity} 
-                  latitude={this.state.latitude} 
-                  longitude={this.state.longitude}/>
-        <Navbar handleSelectCity={this.handleSelectCity}></Navbar>
-        <Footer year={this.year}/>
+        <AlertState>
+          <AuthState>
+            <Router>
+              <Switch>
+                <Route exact path="/" component={Map} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/register" component={Register} />
+              </Switch>
+            </Router>
+          </AuthState>
+        </AlertState>
       </div>
     );
   }

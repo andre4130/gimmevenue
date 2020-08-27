@@ -1,0 +1,37 @@
+[
+   {
+        "id": "0",
+        "genre": "Punk",
+        "checked": true
+    },
+    {
+        "id": "1",
+        "genre": "Post-Punk",
+        "checked": true
+    },
+    {
+        "id": "2",
+        "genre": "Indie",
+        "checked": true
+    },
+    {
+        "id": "3",
+        "genre": "Rock",
+        "checked": true
+    },
+    {
+        "id": "4",
+        "genre": "Electronic",
+        "checked": true
+    },
+    {
+        "id": "5",
+        "genre": "Hip-Hop",
+        "checked": true
+    },   
+    {
+        "id": "6",
+        "genre": "DIY",
+        "checked": true
+    }
+]

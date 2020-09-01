@@ -3,6 +3,21 @@ import React, { Fragment } from 'react';
 //data
 import cities from '../../data/cities.json'
 
+//styles
+import styled from 'styled-components'
+
+const StyledSelect = styled.select`
+margin: 0.3rem;
+padding: 0.1rem;
+border-radius: 5px;
+background-color:none;
+font-size: 1rem;
+
+:dropdown-content {
+    border-radius: 5px;
+}
+`
+
 function CheckCity({ selectedCity, latitude, longitude, setViewPort, viewPort, handleSelectCity }) {
 
     //Select City Function
@@ -29,9 +44,9 @@ function CheckCity({ selectedCity, latitude, longitude, setViewPort, viewPort, h
                 <form>
                     <label>
                         Select your City:
-                        <select onChange={selectCity}>
+                        <StyledSelect onChange={selectCity}>
                             {cityList}
-                        </select>
+                        </StyledSelect>
                     </label>
                 </form>
             </div>

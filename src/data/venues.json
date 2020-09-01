@@ -16,7 +16,8 @@
             "Electronic"
         ],
         "isVisible": true,
-        "counter": 0
+        "counter": 0,
+        "isFavorite": false
     },
     {
         "id": "1",
@@ -34,7 +35,8 @@
             "Rock"
         ],
         "isVisible": true,
-        "counter": 0
+        "counter": 0,
+        "isFavorite": false
     },
     {
         "id": "2",
@@ -52,7 +54,8 @@
             "Rock"
         ],
         "isVisible": true,
-        "counter": 0
+        "counter": 0,
+        "isFavorite": false
     },
     {
         "id": "3",
@@ -68,6 +71,26 @@
             "Electronic"
         ],
         "isVisible": true,
-        "counter": 0
+        "counter": 0,
+        "isFavorite": false
+    },
+    {
+        "id": "4",
+        "name": "Atzavara Club",
+        "type": "Feature",
+        "station": "none",
+        "address": "Ctra. de Palamós, 266, 17220 Sant Feliu de Guíxols, Girona",
+        "city": "Sant Feliu de Guíxols",
+        "position": [41.788568, 3.041175],
+        "className": "rock",
+        "genre": [
+            "DIY",
+            "Punk",
+            "Post-Punk",
+            "Indie"
+        ],
+        "isVisible": true,
+        "counter": 0,
+        "isFavorite": false
     }
 ]

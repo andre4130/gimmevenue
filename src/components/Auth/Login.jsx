@@ -1,6 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Link } from "react-router-dom"
 
+//styled components 
+
+import Button from '../../styles/styledComponents/Button'
+
 //context
 import AlertContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/authentication/authContext';
@@ -85,8 +89,8 @@ const Login = (props) => {
                         />
                     </div>
                     <div className="campo-form">
-                        <input type="submit" className="btn btn-primario btn-block"
-                            value="Login" />
+                        <Button type="submit" className="btn btn-primario btn-block"
+                            value="Login">Login</Button>
                     </div>
                 </form>
                 <Link to={'/register'} className="enlace-cuenta">Register</Link>

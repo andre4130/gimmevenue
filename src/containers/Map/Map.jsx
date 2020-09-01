@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link, useRouteMatch } from 'rea
 //Styles
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../App.css';
+import StyledDiv from '../../styles/styledComponents/StyledDiv'
 //Components
 import BarcelonaMapGl from '../../containers/Map/BarcelonaMapGl';
 import Footer from '../../components/Footer/Footer';
@@ -15,6 +16,7 @@ import tokens from "../../data/token.json";
 
 //authentication for the users of the map
 import AuthContext from '../../context/authentication/authContext';
+
 
 function App({city}) {
 
@@ -57,6 +59,7 @@ function App({city}) {
           handleSelectCity={handleSelectCity}
         >
         </BarcelonaMapGl>
+        <StyledDiv><p>something in here</p></StyledDiv>
         <Footer year={year} />
       </div>
     );

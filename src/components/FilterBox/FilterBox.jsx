@@ -1,11 +1,14 @@
 import React, { Fragment } from 'react'
 
+//styled components
+import Button from '../../styles/styledComponents/Button'
 
 function FilterBox({ selectedCity, latitude, longitude, onChange, onClick, state}) {
 
     const _genres = state.checkbox.map(genre =>
         <li key={genre.id} >
             <input
+                className='checkbox'
                 value={genre.genre}
                 name="Genre"
                 type="checkbox"
@@ -32,22 +35,24 @@ function FilterBox({ selectedCity, latitude, longitude, onChange, onClick, state
                         {_genres}
                     </ul>
                 </label>
-                <br/>
-                <button
-                    className="button"
+                <div>
+                <Button
+                    className="btn"
                     type="button" 
                     onClick={onClick}
                     value="Select All"
                     name="selectAll"
-                >Select All</button>
-                <button
-                className="button"
+                >Select All</Button>
+                <Button
+                className="btn"
                 type="button"
                 onClick={onClick}
                 value="Clear All"
                 name="clearAll">
                     Clear All
-                </button>
+                </Button>
+                </div>
+                
             </div>
         </Fragment>
     )

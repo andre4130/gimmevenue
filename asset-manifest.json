@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/andre4130/GimmeVenue/static/css/main.615a1c46.chunk.css",
+    "main.js": "/andre4130/GimmeVenue/static/js/main.c5d70a2f.chunk.js",
+    "main.js.map": "/andre4130/GimmeVenue/static/js/main.c5d70a2f.chunk.js.map",
+    "runtime-main.js": "/andre4130/GimmeVenue/static/js/runtime-main.fec89ee2.js",
+    "runtime-main.js.map": "/andre4130/GimmeVenue/static/js/runtime-main.fec89ee2.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/andre4130/GimmeVenue/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.6bb8df33.chunk.js": "/andre4130/GimmeVenue/static/js/2.6bb8df33.chunk.js",
+    "static/js/2.6bb8df33.chunk.js.map": "/andre4130/GimmeVenue/static/js/2.6bb8df33.chunk.js.map",
+    "index.html": "/andre4130/GimmeVenue/index.html",
+    "precache-manifest.214bb0ceb70edd22d6d05c1ca8f8b53f.js": "/andre4130/GimmeVenue/precache-manifest.214bb0ceb70edd22d6d05c1ca8f8b53f.js",
+    "service-worker.js": "/andre4130/GimmeVenue/service-worker.js",
+    "static/css/2.af3c1da9.chunk.css.map": "/andre4130/GimmeVenue/static/css/2.af3c1da9.chunk.css.map",
+    "static/css/main.615a1c46.chunk.css.map": "/andre4130/GimmeVenue/static/css/main.615a1c46.chunk.css.map",
+    "static/js/2.6bb8df33.chunk.js.LICENSE.txt": "/andre4130/GimmeVenue/static/js/2.6bb8df33.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/andre4130/GimmeVenue/static/media/synthesizer.f74aa8f8.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fec89ee2.js",
+    "static/css/2.af3c1da9.chunk.css",
+    "static/js/2.6bb8df33.chunk.js",
+    "static/css/main.615a1c46.chunk.css",
+    "static/js/main.c5d70a2f.chunk.js"
+  ]
+}

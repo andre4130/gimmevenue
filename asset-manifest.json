@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/andre4130/GimmeVenue/static/css/main.615a1c46.chunk.css",
-    "main.js": "/andre4130/GimmeVenue/static/js/main.c5d70a2f.chunk.js",
-    "main.js.map": "/andre4130/GimmeVenue/static/js/main.c5d70a2f.chunk.js.map",
-    "runtime-main.js": "/andre4130/GimmeVenue/static/js/runtime-main.fec89ee2.js",
-    "runtime-main.js.map": "/andre4130/GimmeVenue/static/js/runtime-main.fec89ee2.js.map",
-    "static/css/2.af3c1da9.chunk.css": "/andre4130/GimmeVenue/static/css/2.af3c1da9.chunk.css",
-    "static/js/2.6bb8df33.chunk.js": "/andre4130/GimmeVenue/static/js/2.6bb8df33.chunk.js",
-    "static/js/2.6bb8df33.chunk.js.map": "/andre4130/GimmeVenue/static/js/2.6bb8df33.chunk.js.map",
-    "index.html": "/andre4130/GimmeVenue/index.html",
-    "precache-manifest.214bb0ceb70edd22d6d05c1ca8f8b53f.js": "/andre4130/GimmeVenue/precache-manifest.214bb0ceb70edd22d6d05c1ca8f8b53f.js",
-    "service-worker.js": "/andre4130/GimmeVenue/service-worker.js",
-    "static/css/2.af3c1da9.chunk.css.map": "/andre4130/GimmeVenue/static/css/2.af3c1da9.chunk.css.map",
-    "static/css/main.615a1c46.chunk.css.map": "/andre4130/GimmeVenue/static/css/main.615a1c46.chunk.css.map",
-    "static/js/2.6bb8df33.chunk.js.LICENSE.txt": "/andre4130/GimmeVenue/static/js/2.6bb8df33.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/andre4130/GimmeVenue/static/media/synthesizer.f74aa8f8.svg"
+    "main.css": "/gimmevenue/static/css/main.cb666336.chunk.css",
+    "main.js": "/gimmevenue/static/js/main.cf90a729.chunk.js",
+    "main.js.map": "/gimmevenue/static/js/main.cf90a729.chunk.js.map",
+    "runtime-main.js": "/gimmevenue/static/js/runtime-main.eebb7cd9.js",
+    "runtime-main.js.map": "/gimmevenue/static/js/runtime-main.eebb7cd9.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/gimmevenue/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.9f6d7089.chunk.js": "/gimmevenue/static/js/2.9f6d7089.chunk.js",
+    "static/js/2.9f6d7089.chunk.js.map": "/gimmevenue/static/js/2.9f6d7089.chunk.js.map",
+    "index.html": "/gimmevenue/index.html",
+    "precache-manifest.730e5b9b43de4c07ab18cc15fea52056.js": "/gimmevenue/precache-manifest.730e5b9b43de4c07ab18cc15fea52056.js",
+    "service-worker.js": "/gimmevenue/service-worker.js",
+    "static/css/2.af3c1da9.chunk.css.map": "/gimmevenue/static/css/2.af3c1da9.chunk.css.map",
+    "static/css/main.cb666336.chunk.css.map": "/gimmevenue/static/css/main.cb666336.chunk.css.map",
+    "static/js/2.9f6d7089.chunk.js.LICENSE.txt": "/gimmevenue/static/js/2.9f6d7089.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/gimmevenue/static/media/synthesizer.f74aa8f8.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.fec89ee2.js",
+    "static/js/runtime-main.eebb7cd9.js",
     "static/css/2.af3c1da9.chunk.css",
-    "static/js/2.6bb8df33.chunk.js",
-    "static/css/main.615a1c46.chunk.css",
-    "static/js/main.c5d70a2f.chunk.js"
+    "static/js/2.9f6d7089.chunk.js",
+    "static/css/main.cb666336.chunk.css",
+    "static/js/main.cf90a729.chunk.js"
   ]
 }

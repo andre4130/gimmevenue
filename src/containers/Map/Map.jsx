@@ -23,7 +23,8 @@ function App({city}) {
   //setting the state of the App
   const authContext = useContext(AuthContext)
   const { authUser } = authContext;
-  
+
+
   useEffect(() => {
     authUser();
   },[]);
@@ -38,6 +39,7 @@ function App({city}) {
       token: tokens
   })
   
+
   let year = new Date().getFullYear();
   
   const handleSelectCity = (city) => {

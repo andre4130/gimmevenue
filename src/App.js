@@ -28,7 +28,8 @@ class App extends React.Component {
       <div className="App">
         <AlertState>
           <AuthState>
-            <Router>
+            <Router basename={window.location.pathname || ''}>
+              {/* check if this works  */}
               <Switch>
                 <Route exact path="/" component={Map} />
                 <Route exact path="/login" component={Login} />
